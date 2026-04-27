@@ -8,96 +8,95 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Warm, sophisticated palette inspired by the design */
-    --background: 36 44% 96%;
-    --foreground: 0 0% 18%;
+    /* Shasha Nails — soft & feminine palette inspired by the logo */
+    --background: 350 60% 98%;
+    --foreground: 340 35% 18%;
 
-    --card: 33 40% 94%;
-    --card-foreground: 0 0% 18%;
+    --card: 350 50% 96%;
+    --card-foreground: 340 35% 18%;
 
-    --popover: 36 44% 96%;
-    --popover-foreground: 0 0% 18%;
+    --popover: 350 60% 98%;
+    --popover-foreground: 340 35% 18%;
 
-    --primary: 0 0% 18%;
-    --primary-foreground: 36 44% 96%;
+    /* Deep magenta from the logo */
+    --primary: 333 75% 42%;
+    --primary-foreground: 350 60% 98%;
 
-    --secondary: 25 30% 70%;
-    --secondary-foreground: 0 0% 18%;
+    /* Soft blush */
+    --secondary: 350 65% 92%;
+    --secondary-foreground: 333 60% 30%;
 
-    --muted: 33 30% 88%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 350 40% 94%;
+    --muted-foreground: 340 15% 45%;
 
-    --accent: 140 20% 50%;
-    --accent-foreground: 36 44% 96%;
+    /* Rose accent */
+    --accent: 345 70% 70%;
+    --accent-foreground: 350 60% 98%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 36 44% 96%;
+    --destructive-foreground: 350 60% 98%;
 
-    --border: 33 25% 85%;
-    --input: 33 25% 85%;
-    --ring: 0 0% 18%;
+    --border: 345 40% 90%;
+    --input: 345 40% 90%;
+    --ring: 333 75% 42%;
 
-    --radius: 1rem;
+    --radius: 1.25rem;
 
-    /* Custom design tokens */
-    --tag-financing: 210 50% 75%;
-    --tag-lifestyle: 140 20% 70%;
-    --tag-community: 25 35% 60%;
-    --tag-wellness: 280 30% 75%;
-    --tag-travel: 195 50% 70%;
-    --tag-creativity: 330 40% 75%;
-    --tag-growth: 50 45% 70%;
+    /* Brand tokens */
+    --blush: 350 75% 95%;
+    --blush-deep: 345 60% 85%;
+    --rose: 340 70% 60%;
+    --magenta: 333 75% 42%;
+    --magenta-glow: 333 80% 60%;
+    --cream: 40 40% 96%;
+    --cream-foreground: 340 35% 18%;
+    --surface-elevated: 350 60% 99%;
+    --shadow-soft: 333 50% 30%;
 
-    /* Polish design tokens */
-    --cream: 40 40% 90%;
-    --cream-foreground: 0 0% 18%;
-    --surface-elevated: 36 44% 98%;
-    --shadow-soft: 0 0% 0%;
+    --gradient-hero: linear-gradient(135deg, hsl(350 75% 95%) 0%, hsl(345 60% 88%) 50%, hsl(340 50% 80%) 100%);
+    --gradient-magenta: linear-gradient(135deg, hsl(var(--magenta)) 0%, hsl(var(--magenta-glow)) 100%);
+    --shadow-elegant: 0 20px 50px -20px hsl(var(--magenta) / 0.35);
+    --shadow-petal: 0 10px 30px -10px hsl(var(--rose) / 0.4);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 0 0% 10%;
-    --foreground: 36 44% 96%;
+    --background: 340 30% 8%;
+    --foreground: 350 60% 96%;
 
-    --card: 0 0% 14%;
-    --card-foreground: 36 44% 96%;
+    --card: 340 25% 12%;
+    --card-foreground: 350 60% 96%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 36 44% 96%;
+    --popover: 340 30% 8%;
+    --popover-foreground: 350 60% 96%;
 
-    --primary: 36 44% 96%;
-    --primary-foreground: 0 0% 18%;
+    --primary: 345 75% 65%;
+    --primary-foreground: 340 30% 10%;
 
-    --secondary: 25 15% 30%;
-    --secondary-foreground: 36 44% 96%;
+    --secondary: 340 25% 20%;
+    --secondary-foreground: 350 60% 96%;
 
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 340 20% 18%;
+    --muted-foreground: 350 20% 70%;
 
-    --accent: 140 20% 45%;
-    --accent-foreground: 36 44% 96%;
+    --accent: 345 70% 60%;
+    --accent-foreground: 340 30% 10%;
 
     --destructive: 0 62% 50%;
-    --destructive-foreground: 36 44% 96%;
+    --destructive-foreground: 350 60% 96%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 36 44% 96%;
+    --border: 340 20% 22%;
+    --input: 340 20% 22%;
+    --ring: 345 75% 65%;
 
-    /* Dark mode tag colors */
-    --tag-financing: 210 40% 45%;
-    --tag-lifestyle: 140 20% 40%;
-    --tag-community: 25 30% 40%;
-    --tag-wellness: 280 25% 45%;
-    --tag-travel: 195 40% 45%;
-    --tag-creativity: 330 35% 45%;
-    --tag-growth: 50 40% 45%;
-
-    /* Dark mode polish tokens */
-    --cream: 40 20% 25%;
-    --cream-foreground: 36 44% 96%;
-    --surface-elevated: 0 0% 16%;
+    --blush: 340 25% 18%;
+    --blush-deep: 340 30% 25%;
+    --rose: 345 70% 60%;
+    --magenta: 333 75% 55%;
+    --magenta-glow: 333 80% 70%;
+    --cream: 40 15% 18%;
+    --cream-foreground: 350 60% 96%;
+    --surface-elevated: 340 25% 14%;
     --shadow-soft: 0 0% 0%;
   }
 }
@@ -121,6 +120,33 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
+  .font-script {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-magenta {
+    background: var(--gradient-magenta);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .shadow-petal {
+    box-shadow: var(--shadow-petal);
+  }
+
+  .text-gradient-magenta {
+    background: var(--gradient-magenta);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
   .card-hover {
     @apply transition-all duration-500 hover:scale-[1.02];
     box-shadow: 0 4px 20px -4px hsl(var(--shadow-soft) / 0.1);
