@@ -1,100 +1,396 @@
+import { useEffect } from "react";
+import { Sparkles, Heart, Star, MapPin, Clock, Instagram, Phone, Mail, Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
-import ArticleCard from "@/components/ArticleCard";
-import HeroSection from "@/components/HeroSection";
-import IntroSection from "@/components/IntroSection";
-import { articles } from "@/data/articles";
+import logo from "@/assets/shasha-logo.png";
+import hero from "@/assets/hero-nails.jpg";
+import g1 from "@/assets/gallery-1.jpg";
+import g2 from "@/assets/gallery-2.jpg";
+import g3 from "@/assets/gallery-3.jpg";
+import g4 from "@/assets/gallery-4.jpg";
+import g5 from "@/assets/gallery-5.jpg";
+import g6 from "@/assets/gallery-6.jpg";
+
+const services = [
+  {
+    name: "Classic Manicure",
+    price: "$35",
+    duration: "45 min",
+    description: "Shape, cuticle care, and a flawless polish finish.",
+    features: ["Nail shaping", "Cuticle care", "Hand massage", "Long-lasting polish"],
+  },
+  {
+    name: "Gel Extensions",
+    price: "$75",
+    duration: "90 min",
+    description: "Sculpted gel extensions in your perfect length and shape.",
+    features: ["Custom length", "Gel build-up", "Glossy or matte top", "2-3 week wear"],
+    highlight: true,
+  },
+  {
+    name: "Custom Nail Art",
+    price: "From $20",
+    duration: "+30 min",
+    description: "Hand-painted designs, chrome, rhinestones — the canvas is yours.",
+    features: ["Hand-painted art", "Rhinestones & chrome", "Floral & abstract", "Bridal designs"],
+  },
+];
+
+const gallery = [
+  { src: g1, alt: "French manicure with gold accents" },
+  { src: g2, alt: "Chrome rose gold almond nails" },
+  { src: g3, alt: "Floral hand-painted nail art" },
+  { src: g4, alt: "Glittery pink stiletto nails" },
+  { src: g5, alt: "Milky white pearl bridal nails" },
+  { src: g6, alt: "Burgundy glossy almond nails" },
+];
+
+const testimonials = [
+  {
+    name: "Amelia R.",
+    role: "Returning client",
+    quote: "Shasha is a true artist. My nails have never looked this good — every set feels custom-made for me.",
+    rating: 5,
+  },
+  {
+    name: "Jasmine K.",
+    role: "Bride 2024",
+    quote: "She did my bridal nails and I was speechless. So delicate, so elegant. Worth every penny.",
+    rating: 5,
+  },
+  {
+    name: "Noor A.",
+    role: "Monthly regular",
+    quote: "The studio is calm, clean, and Shasha is the warmest. I look forward to every appointment.",
+    rating: 5,
+  },
+];
 
 const Index = () => {
-  const featuredArticles = articles.slice(0, 6);
+  useEffect(() => {
+    // Calendly inline widget script (placeholder — swap URL when ready)
+    const id = "calendly-widget-script";
+    if (!document.getElementById(id)) {
+      const s = document.createElement("script");
+      s.id = id;
+      s.src = "https://assets.calendly.com/assets/external/widget.js";
+      s.async = true;
+      document.body.appendChild(s);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-background animate-fade-in">
       <Header />
-      
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Hero Section */}
-        <HeroSection />
 
-        {/* Intro Section */}
-        <IntroSection />
+      {/* HERO */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 gradient-hero opacity-60" aria-hidden />
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-[hsl(var(--rose)/0.25)] blur-3xl" aria-hidden />
+        <div className="absolute -bottom-40 -left-32 w-[500px] h-[500px] rounded-full bg-[hsl(var(--blush-deep)/0.4)] blur-3xl" aria-hidden />
 
-        {/* Featured Articles Grid */}
-        <section id="articles" className="py-12">
-          <div className="flex items-center justify-between mb-12 animate-slide-up">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Featured Articles</h2>
-            <a href="#all" className="text-sm font-medium text-muted-foreground hover:text-accent transition-colors px-4 py-2 rounded-full hover:bg-muted/60">
-              View all →
-            </a>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 md:pt-20 md:pb-32">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="space-y-8 animate-slide-up">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--blush))] border border-[hsl(var(--blush-deep))] text-sm text-primary">
+                <Sparkles className="h-4 w-4" />
+                <span>Bespoke nail artistry since 2022</span>
+              </div>
+
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight">
+                <span className="font-serif">Nails that feel like </span>
+                <span className="font-script text-gradient-magenta block mt-2">a love letter.</span>
+              </h1>
+
+              <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
+                Hi, I'm Shasha — a licensed nail technician crafting bespoke gel,
+                acrylic, and hand-painted designs. Every set is an intimate
+                collaboration between you, me, and a little bit of magic.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button asChild size="lg" className="gradient-magenta text-primary-foreground rounded-full px-8 py-6 text-base hover:scale-105 transition-all shadow-elegant">
+                  <a href="#booking">Book Your Session</a>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="rounded-full px-8 py-6 text-base border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all">
+                  <a href="#gallery">View Gallery</a>
+                </Button>
+              </div>
+
+              <div className="flex items-center gap-6 pt-4">
+                <div>
+                  <div className="text-2xl font-serif font-semibold text-primary">500+</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider">Happy clients</div>
+                </div>
+                <div className="h-10 w-px bg-border" />
+                <div>
+                  <div className="text-2xl font-serif font-semibold text-primary">4.9★</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider">Avg. rating</div>
+                </div>
+                <div className="h-10 w-px bg-border" />
+                <div>
+                  <div className="text-2xl font-serif font-semibold text-primary">3yrs</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider">Of artistry</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative animate-scale-in">
+              <div className="absolute inset-0 -rotate-3 rounded-[2.5rem] bg-[hsl(var(--rose)/0.3)] blur-2xl" aria-hidden />
+              <div className="relative rounded-[2.5rem] overflow-hidden shadow-elegant border-4 border-[hsl(var(--blush))]">
+                <img
+                  src={hero}
+                  alt="Shasha Nails — luxury manicure flatlay"
+                  width={1536}
+                  height={1024}
+                  className="w-full h-[420px] sm:h-[520px] object-cover"
+                />
+              </div>
+              <img
+                src={logo}
+                alt=""
+                aria-hidden
+                className="absolute -bottom-6 -left-6 w-32 h-32 rounded-full bg-background/95 backdrop-blur p-3 shadow-petal hidden sm:block"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <span className="font-script text-3xl text-accent">about me</span>
+              <h2 className="text-4xl md:text-5xl font-serif tracking-tight">
+                A small studio, a <em className="text-gradient-magenta not-italic">big obsession</em> with detail.
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Shasha Nails was born from a quiet obsession: turning ten little
+                canvases into something you can't stop staring at. I work by
+                appointment only so every client gets my full attention — no rush,
+                no shortcuts, just thoughtful artistry in a space that feels like home.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  "Licensed & sanitation-certified",
+                  "Premium gel & builder products",
+                  "Custom designs from concept to nail",
+                  "Cozy, private 1-on-1 studio",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <span className="flex items-center justify-center h-6 w-6 rounded-full gradient-magenta">
+                      <Check className="h-3.5 w-3.5 text-primary-foreground" />
+                    </span>
+                    <span className="text-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="relative">
+              <div className="grid grid-cols-2 gap-4">
+                <img src={g3} alt="" loading="lazy" width={768} height={768} className="rounded-3xl shadow-petal aspect-[3/4] object-cover translate-y-6" />
+                <img src={g2} alt="" loading="lazy" width={768} height={768} className="rounded-3xl shadow-petal aspect-[3/4] object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section id="services" className="py-20 md:py-28 bg-[hsl(var(--blush)/0.5)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <span className="font-script text-3xl text-accent">services</span>
+            <h2 className="text-4xl md:text-5xl font-serif tracking-tight">The menu</h2>
+            <p className="text-muted-foreground text-lg">
+              Transparent pricing, generous time, no hidden add-ons.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredArticles.map((article, index) => (
-              <div key={article.id} className={`animate-slide-up stagger-${Math.min(index + 1, 6)}`}>
-                <ArticleCard {...article} size="small" />
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {services.map((s) => (
+              <Card
+                key={s.name}
+                className={`p-8 rounded-3xl border-2 transition-all hover:-translate-y-2 hover:shadow-elegant ${
+                  s.highlight
+                    ? "border-primary bg-card shadow-elegant relative overflow-hidden"
+                    : "border-border bg-card/80"
+                }`}
+              >
+                {s.highlight && (
+                  <span className="absolute top-4 right-4 text-xs px-3 py-1 rounded-full gradient-magenta text-primary-foreground font-medium">
+                    Most loved
+                  </span>
+                )}
+                <h3 className="text-2xl font-serif">{s.name}</h3>
+                <div className="mt-3 flex items-baseline gap-2">
+                  <span className="text-4xl font-serif text-gradient-magenta font-semibold">{s.price}</span>
+                  <span className="text-sm text-muted-foreground">· {s.duration}</span>
+                </div>
+                <p className="mt-4 text-muted-foreground">{s.description}</p>
+                <ul className="mt-6 space-y-2">
+                  {s.features.map((f) => (
+                    <li key={f} className="flex items-center gap-2 text-sm">
+                      <Heart className="h-3.5 w-3.5 text-accent fill-accent" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Button asChild className="mt-8 w-full rounded-full gradient-magenta text-primary-foreground hover:opacity-90">
+                  <a href="#booking">Book this</a>
+                </Button>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GALLERY */}
+      <section id="gallery" className="py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <span className="font-script text-3xl text-accent">portfolio</span>
+            <h2 className="text-4xl md:text-5xl font-serif tracking-tight">Recent work</h2>
+            <p className="text-muted-foreground text-lg">
+              A peek inside the studio. Each set is one-of-one.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {gallery.map((img, i) => (
+              <div
+                key={i}
+                className={`group relative overflow-hidden rounded-3xl shadow-petal hover:shadow-elegant transition-all duration-500 ${
+                  i % 5 === 0 ? "md:row-span-2 md:aspect-[3/4]" : "aspect-square"
+                }`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  width={768}
+                  height={768}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                  <span className="text-primary-foreground text-sm font-medium">{img.alt}</span>
+                </div>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Newsletter Section */}
-        <section className="my-20 rounded-[2.5rem] bg-card p-12 md:p-16 text-center animate-scale-in">
-          <div className="max-w-2xl mx-auto space-y-8">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Stay inspired.</h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Subscribe to receive our latest articles and insights directly in your inbox.
+      {/* TESTIMONIALS */}
+      <section id="testimonials" className="py-20 md:py-28 bg-[hsl(var(--blush)/0.5)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <span className="font-script text-3xl text-accent">love letters</span>
+            <h2 className="text-4xl md:text-5xl font-serif tracking-tight">What clients say</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {testimonials.map((t) => (
+              <Card key={t.name} className="p-8 rounded-3xl border-border bg-card/80 hover:shadow-petal transition-all">
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                  ))}
+                </div>
+                <p className="text-foreground leading-relaxed italic">"{t.quote}"</p>
+                <div className="mt-6 pt-6 border-t border-border">
+                  <div className="font-serif text-lg">{t.name}</div>
+                  <div className="text-sm text-muted-foreground">{t.role}</div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* BOOKING */}
+      <section id="booking" className="py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
+            <span className="font-script text-3xl text-accent">book a session</span>
+            <h2 className="text-4xl md:text-5xl font-serif tracking-tight">
+              Pick a time that <em className="text-gradient-magenta not-italic">works for you</em>
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Real-time availability via Calendly. You'll receive a confirmation email immediately.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 px-6 py-4 rounded-full border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition-all"
-              />
-              <button className="px-10 py-4 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 hover:scale-105 transition-all">
-                Subscribe
-              </button>
-            </div>
           </div>
-        </section>
-      </main>
 
-      {/* Footer */}
-      <footer className="border-t border-border mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="font-semibold mb-4">Explore</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="/wellness" className="hover:text-accent transition-colors">Wellness</a></li>
-                <li><a href="/travel" className="hover:text-accent transition-colors">Travel</a></li>
-                <li><a href="/creativity" className="hover:text-accent transition-colors">Creativity</a></li>
-                <li><a href="/growth" className="hover:text-accent transition-colors">Growth</a></li>
-              </ul>
+          <div className="rounded-[2rem] overflow-hidden border-2 border-[hsl(var(--blush-deep))] bg-card shadow-elegant">
+            {/* Calendly inline widget — replace data-url with your own link */}
+            <div
+              className="calendly-inline-widget"
+              data-url="https://calendly.com/your-link/nail-session?hide_gdpr_banner=1&primary_color=c2185b"
+              style={{ minWidth: "320px", height: "720px" }}
+            />
+          </div>
+
+          <p className="text-center text-sm text-muted-foreground mt-4">
+            Calendly link is a placeholder — replace <code className="font-mono">data-url</code> in <code className="font-mono">Index.tsx</code> with your real Calendly URL.
+          </p>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="py-20 md:py-28 bg-[hsl(var(--blush)/0.5)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <span className="font-script text-3xl text-accent">say hi</span>
+              <h2 className="text-4xl md:text-5xl font-serif tracking-tight">
+                Let's create something beautiful together.
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Questions, custom requests, or want to chat about a design? I'd love to hear from you.
+              </p>
             </div>
-            <div>
-              <h3 className="font-semibold mb-4">About</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="/about" className="hover:text-accent transition-colors">Our Story</a></li>
-                <li><a href="/authors" className="hover:text-accent transition-colors">Authors</a></li>
-                <li><a href="/contact" className="hover:text-accent transition-colors">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Resources</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="/style-guide" className="hover:text-accent transition-colors">Style Guide</a></li>
-                <li><a href="/#newsletter" className="hover:text-accent transition-colors">Newsletter</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Legal</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="/privacy" className="hover:text-accent transition-colors">Privacy Policy</a></li>
-                <li><a href="/terms" className="hover:text-accent transition-colors">Terms of Service</a></li>
-              </ul>
+
+            <div className="space-y-4">
+              {[
+                { icon: MapPin, label: "Studio", value: "By appointment only" },
+                { icon: Clock, label: "Hours", value: "Tue–Sat · 10am – 7pm" },
+                { icon: Phone, label: "Text", value: "+1 (555) 010-2022" },
+                { icon: Mail, label: "Email", value: "hello@shashanails.com" },
+                { icon: Instagram, label: "Instagram", value: "@shasha.nails" },
+              ].map(({ icon: Icon, label, value }) => (
+                <div key={label} className="flex items-center gap-4 p-5 rounded-2xl bg-card border border-border hover:border-primary transition-all">
+                  <div className="h-12 w-12 rounded-full gradient-magenta flex items-center justify-center flex-shrink-0">
+                    <Icon className="h-5 w-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
+                    <div className="font-medium text-foreground">{value}</div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-            <p>© 2025 Perspective. All rights reserved.</p>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="border-t border-border bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-3">
+              <img src={logo} alt="Shasha Nails" className="h-10 w-auto" />
+              <span className="font-script text-2xl text-primary">Shasha Nails</span>
+            </div>
+            <nav className="flex gap-6 text-sm text-muted-foreground">
+              <a href="#about" className="hover:text-primary transition-colors">About</a>
+              <a href="#services" className="hover:text-primary transition-colors">Services</a>
+              <a href="#gallery" className="hover:text-primary transition-colors">Gallery</a>
+              <a href="#booking" className="hover:text-primary transition-colors">Book</a>
+            </nav>
+            <p className="text-sm text-muted-foreground">© 2025 Shasha Nails · Since 2022</p>
           </div>
         </div>
       </footer>

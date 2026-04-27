@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/shasha-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,31 +37,19 @@ const Header = () => {
         <div className="flex items-center justify-between h-14 sm:h-16 pill-nav px-4 sm:px-6">
           {/* Logo */}
           <div className="flex items-center min-w-0">
-            <a href="/" className="flex items-center gap-1.5 sm:gap-2">
-              <div className="w-7 h-7 sm:w-8 sm:h-8 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                <span className="text-primary-foreground font-bold text-base sm:text-lg">P</span>
-              </div>
-              <span className="text-base sm:text-xl font-bold font-serif truncate">Perspective</span>
+            <a href="/" className="flex items-center gap-2">
+              <img src={logo} alt="Shasha Nails" className="h-9 sm:h-11 w-auto" />
+              <span className="font-script text-xl sm:text-2xl text-primary truncate">Shasha Nails</span>
             </a>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-2">
-            <a href="/" className="text-sm font-medium hover:bg-muted/60 rounded-full px-4 py-2 transition-all">
-              Home
-            </a>
-            <a href="/#articles" className="text-sm font-medium hover:bg-muted/60 rounded-full px-4 py-2 transition-all">
-              Articles
-            </a>
-            <a href="/wellness" className="text-sm font-medium hover:bg-muted/60 rounded-full px-4 py-2 transition-all">
-              Wellness
-            </a>
-            <a href="/travel" className="text-sm font-medium hover:bg-muted/60 rounded-full px-4 py-2 transition-all">
-              Travel
-            </a>
-            <a href="/about" className="text-sm font-medium hover:bg-muted/60 rounded-full px-4 py-2 transition-all">
-              About
-            </a>
+            <a href="#about" className="text-sm font-medium hover:bg-muted/60 rounded-full px-4 py-2 transition-all">About</a>
+            <a href="#services" className="text-sm font-medium hover:bg-muted/60 rounded-full px-4 py-2 transition-all">Services</a>
+            <a href="#gallery" className="text-sm font-medium hover:bg-muted/60 rounded-full px-4 py-2 transition-all">Gallery</a>
+            <a href="#testimonials" className="text-sm font-medium hover:bg-muted/60 rounded-full px-4 py-2 transition-all">Reviews</a>
+            <a href="#contact" className="text-sm font-medium hover:bg-muted/60 rounded-full px-4 py-2 transition-all">Contact</a>
           </nav>
 
           {/* Actions */}
@@ -77,8 +66,8 @@ const Header = () => {
               )}
             </button>
             
-            <Button className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-2 hover:scale-105 transition-all">
-              Join Now
+            <Button asChild className="hidden md:flex gradient-magenta hover:opacity-90 text-primary-foreground rounded-full px-6 py-2 hover:scale-105 transition-all shadow-petal">
+              <a href="#booking">Book Now</a>
             </Button>
 
             {/* Mobile Menu Button */}
@@ -94,25 +83,15 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in">
-            <nav className="flex flex-col gap-4">
-              <a href="/" className="text-sm font-medium hover:text-accent transition-colors">
-                Home
-              </a>
-              <a href="/#articles" className="text-sm font-medium hover:text-accent transition-colors">
-                Articles
-              </a>
-              <a href="/wellness" className="text-sm font-medium hover:text-accent transition-colors">
-                Wellness
-              </a>
-              <a href="/travel" className="text-sm font-medium hover:text-accent transition-colors">
-                Travel
-              </a>
-              <a href="/about" className="text-sm font-medium hover:text-accent transition-colors">
-                About
-              </a>
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full w-full">
-                Join Now
+          <div className="md:hidden mt-2 p-4 rounded-2xl pill-nav animate-fade-in">
+            <nav className="flex flex-col gap-3">
+              <a onClick={() => setIsMenuOpen(false)} href="#about" className="text-sm font-medium px-3 py-2 rounded-xl hover:bg-muted/60">About</a>
+              <a onClick={() => setIsMenuOpen(false)} href="#services" className="text-sm font-medium px-3 py-2 rounded-xl hover:bg-muted/60">Services</a>
+              <a onClick={() => setIsMenuOpen(false)} href="#gallery" className="text-sm font-medium px-3 py-2 rounded-xl hover:bg-muted/60">Gallery</a>
+              <a onClick={() => setIsMenuOpen(false)} href="#testimonials" className="text-sm font-medium px-3 py-2 rounded-xl hover:bg-muted/60">Reviews</a>
+              <a onClick={() => setIsMenuOpen(false)} href="#contact" className="text-sm font-medium px-3 py-2 rounded-xl hover:bg-muted/60">Contact</a>
+              <Button asChild className="gradient-magenta text-primary-foreground rounded-full w-full">
+                <a href="#booking" onClick={() => setIsMenuOpen(false)}>Book Now</a>
               </Button>
             </nav>
           </div>
