@@ -1,73 +1,39 @@
-# Welcome to your Lovable project
+# 💅 Nail Technician Portfolio & Booking Platform
 
-## Project info
+A modern, full-stack web application built for a professional nail technician based in Randburg, South Africa. The platform showcases services, manages client interactions, and provides a seamless digital booking experience.
 
-**URL**: https://lovable.dev/projects/7410f81b-8218-4f2d-bb32-1ba1f84eabb2
+This project is currently in active development:
+**Version 2.0.0 is under development** — migrating from a Lovable-generated prototype into a production-grade Next.js + TypeScript architecture with Payload CMS backend support.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Tech Stack
 
-**Use Lovable**
+- **Frontend:** Next.js (App Router), TypeScript
+- **Styling:** Tailwind CSS, Bootstrap 5 (legacy UI components)
+- **Backend:** Payload CMS (v2.0 migration)
+- **Email Service:** Nodemailer / SMTP integration
+- **Hosting:** Vercel (planned)
+- **Database:** PostgreSQL (via Payload CMS adapter)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7410f81b-8218-4f2d-bb32-1ba1f84eabb2) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## ✨ Features
 
-**Use your preferred IDE**
+### 🧑‍💼 Public Client Features
+- Service catalogue (nail sets, overlays, pedicures, etc.)
+- Portfolio gallery (before & after work)
+- Online booking request system
+- Contact form (email integration)
+- Pricing overview
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 🛠 Admin Features (v2.0)
+- Secure login system (Payload CMS auth)
+- Manage services and pricing
+- Upload portfolio images
+- View booking requests
+- Manage client messages
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/7410f81b-8218-4f2d-bb32-1ba1f84eabb2) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📁 Project Structure
