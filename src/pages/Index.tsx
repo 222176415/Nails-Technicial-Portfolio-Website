@@ -11,6 +11,9 @@ import g3 from "@/assets/gallery-3.jpg";
 import g4 from "@/assets/gallery-4.jpg";
 import g5 from "@/assets/gallery-5.jpg";
 import g6 from "@/assets/gallery-6.jpg";
+import showcasePink from "@/assets/showcase-pink-glow.jpg";
+import showcaseFrench from "@/assets/showcase-french-vibes.jpg";
+import showcaseBloom from "@/assets/showcase-bloom-nails.jpg";
 
 const services = [
   {
@@ -346,9 +349,9 @@ const Index = () => {
           <div className="relative mb-16 md:mb-24">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-0">
               {[
-                { src: g1, label: "GEL MANICURE", rotate: "sm:-rotate-6 sm:translate-y-6", z: "z-10" },
-                { src: g4, label: "S–XL ACRYLIC NAILS", rotate: "sm:rotate-0 sm:-translate-y-4", z: "z-20" },
-                { src: g6, label: "ACRYLIC OVERLAYS & MORE", rotate: "sm:rotate-6 sm:translate-y-6", z: "z-10" },
+                { src: showcaseFrench, label: "GEL MANICURE", rotate: "sm:-rotate-6 sm:translate-y-6", z: "z-10" },
+                { src: showcasePink, label: "S–XL ACRYLIC NAILS", rotate: "sm:rotate-0 sm:-translate-y-4", z: "z-20" },
+                { src: showcaseBloom, label: "ACRYLIC OVERLAYS & MORE", rotate: "sm:rotate-6 sm:translate-y-6", z: "z-10" },
               ].map((item, i) => (
                 <div
                   key={i}
