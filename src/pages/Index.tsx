@@ -341,36 +341,77 @@ const Index = () => {
 
       {/* CONTACT */}
       <section id="contact" className="py-20 md:py-28 bg-[hsl(var(--blush)/0.5)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <span className="font-script text-3xl text-accent">say hi</span>
-              <h2 className="text-4xl md:text-5xl font-serif tracking-tight">
-                Let's create something beautiful together.
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Questions, custom requests, or want to chat about a design? I'd love to hear from you.
-              </p>
-            </div>
-
-            <div className="space-y-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Tilted overlapping showcase cards */}
+          <div className="relative mb-16 md:mb-24">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-0">
               {[
-                { icon: MapPin, label: "Studio", value: "By appointment only" },
-                { icon: Clock, label: "Hours", value: "Tue–Sat · 10am – 7pm" },
-                { icon: Phone, label: "Text", value: "+1 (555) 010-2022" },
-                { icon: Mail, label: "Email", value: "hello@shashanails.com" },
-                { icon: Instagram, label: "Instagram", value: "@shasha.nails" },
-              ].map(({ icon: Icon, label, value }) => (
-                <div key={label} className="flex items-center gap-4 p-5 rounded-2xl bg-card border border-border hover:border-primary transition-all">
-                  <div className="h-12 w-12 rounded-full gradient-magenta flex items-center justify-center flex-shrink-0">
-                    <Icon className="h-5 w-5 text-primary-foreground" />
+                { src: g1, label: "GEL MANICURE", rotate: "sm:-rotate-6 sm:translate-y-6", z: "z-10" },
+                { src: g4, label: "S–XL ACRYLIC NAILS", rotate: "sm:rotate-0 sm:-translate-y-4", z: "z-20" },
+                { src: g6, label: "ACRYLIC OVERLAYS & MORE", rotate: "sm:rotate-6 sm:translate-y-6", z: "z-10" },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className={`relative w-64 sm:w-56 md:w-64 lg:w-72 sm:-mx-4 ${item.rotate} ${item.z} transition-transform duration-500 hover:-translate-y-2`}
+                >
+                  <div className="relative rounded-3xl overflow-hidden shadow-elegant border-4 border-card aspect-[3/4]">
+                    <img
+                      src={item.src}
+                      alt={item.label}
+                      loading="lazy"
+                      width={576}
+                      height={768}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
-                    <div className="font-medium text-foreground">{value}</div>
+                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-foreground text-background px-4 py-2 rounded-md shadow-petal whitespace-nowrap">
+                    <span className="text-xs sm:text-sm font-bold tracking-wider">{item.label}</span>
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Contacts | Hours / Location */}
+          <div className="grid md:grid-cols-2 gap-10 md:gap-0 md:divide-x md:divide-foreground/20">
+            {/* Contacts */}
+            <div className="md:pr-12 text-center md:text-left">
+              <h3 className="text-3xl md:text-4xl font-serif font-bold tracking-wider mb-8">CONTACTS</h3>
+              <ul className="space-y-5 inline-block text-left">
+                {[
+                  { icon: Phone, value: "(909) 817-8164" },
+                  { icon: Instagram, value: "@nailsxbyvanessa" },
+                  { icon: Mail, value: "hello@shashanails.com" },
+                ].map(({ icon: Icon, value }) => (
+                  <li key={value} className="flex items-center gap-4">
+                    <span className="h-10 w-10 rounded-full border-2 border-foreground/80 flex items-center justify-center flex-shrink-0">
+                      <Icon className="h-4 w-4 text-foreground" />
+                    </span>
+                    <span className="text-base md:text-lg font-medium tracking-wide uppercase">{value}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Hours + Location */}
+            <div className="md:pl-12 text-center md:text-left space-y-8">
+              <div>
+                <h3 className="text-3xl md:text-4xl font-serif font-bold tracking-wider mb-6">HOURS</h3>
+                <p className="text-lg md:text-xl font-medium">
+                  <span className="tracking-wide">MON – FRI</span>
+                  <span className="ml-3">1pm – 8pm</span>
+                </p>
+                <p className="mt-2 text-sm md:text-base tracking-[0.3em] text-primary/70">
+                  SAT · SUN CLOSED
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-3xl md:text-4xl font-serif font-bold tracking-wider mb-4">LOCATION</h3>
+                <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+                  Will be given once<br />appointment is made
+                </p>
+              </div>
             </div>
           </div>
         </div>
