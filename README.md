@@ -5,7 +5,6 @@ A modern web application built for a professional nail technician based in Randb
 This project is currently in active development:
 **Version 2.0.0 is under development** — migrating into a production-grade Next.js + TypeScript architecture with Payload CMS backend and Calendly scheduling integration.
 
----
 
 ## 🚀 Tech Stack
 
