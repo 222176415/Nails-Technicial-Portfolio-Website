@@ -224,7 +224,7 @@ const Index = () => {
             {/* Calendly inline widget — replace data-url with your own link */}
             <div
               className="calendly-inline-widget"
-              data-url="https://calendly.com/your-link/nail-session?hide_gdpr_banner=1&primary_color=c2185b"
+              data-url="https://calendly.com/nsukugold07/30min?background_color=fae1f4&primary_color=f391cb"
               style={{ minWidth: "320px", height: "720px" }}
             />
           </div>
