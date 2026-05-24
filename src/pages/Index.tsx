@@ -3,6 +3,7 @@ import { Sparkles, Heart, Star, MapPin, Clock, Instagram, Phone, Mail, Check } f
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import logo from "@/assets/shasha-logo.png";
 import hero from "@/assets/hero-nails.jpg";
 import g1 from "@/assets/gallery-1.jpg";
@@ -98,12 +99,12 @@ const Index = () => {
             <div className="space-y-8 animate-slide-up">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--blush))] border border-[hsl(var(--blush-deep))] text-sm text-primary">
                 <Sparkles className="h-4 w-4" />
-                <span>Bespoke nail artistry since 2022</span>
+                <span>NOW ACCEPTING BOOKINGS</span>
               </div>
 
               <h1 className="text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight">
                 <span className="font-serif">Nails that feel like </span>
-                <span className="font-script text-gradient-magenta block mt-2">a love letter.</span>
+                <span className="font-script text-gradient-magenta block mt-2"> a love letter.</span>
               </h1>
 
               <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
@@ -420,24 +421,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="border-t border-border bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <img src={logo} alt="Shasha Nails" className="h-10 w-auto" />
-              <span className="font-script text-2xl text-primary">Shasha Nails</span>
-            </div>
-            <nav className="flex gap-6 text-sm text-muted-foreground">
-              <a href="#about" className="hover:text-primary transition-colors">About</a>
-              <a href="#services" className="hover:text-primary transition-colors">Services</a>
-              <a href="#gallery" className="hover:text-primary transition-colors">Gallery</a>
-              <a href="#booking" className="hover:text-primary transition-colors">Book</a>
-            </nav>
-            <p className="text-sm text-muted-foreground">© 2025 Shasha Nails · Since 2022</p>
-          </div>
-        </div>
-      </footer>
+
+ <Footer />
     </div>
   );
 };
