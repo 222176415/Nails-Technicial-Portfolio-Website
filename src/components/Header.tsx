@@ -35,15 +35,12 @@ const Header = () => {
     <header className="sticky top-0 z-50 py-2 sm:py-4">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16 pill-nav px-4 sm:px-6">
-          {/* Logo */}
           <div className="flex items-center min-w-0">
             <a href="/" className="flex items-center gap-2">
               <img src={logo} alt="Shasha Nails" className="h-9 sm:h-11 w-auto dark:rounded-lg" />
               <span className="font-script text-xl sm:text-2xl text-primary truncate">Shasha Nails</span>
             </a>
           </div>
-
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-2">
             <a href="#about" className="text-sm font-medium hover:bg-muted/60 rounded-full px-4 py-2 transition-all">About</a>
             <a href="#services" className="text-sm font-medium hover:bg-muted/60 rounded-full px-4 py-2 transition-all">Services</a>
@@ -52,7 +49,6 @@ const Header = () => {
             <a href="#contact" className="text-sm font-medium hover:bg-muted/60 rounded-full px-4 py-2 transition-all">Contact</a>
           </nav>
 
-          {/* Actions */}
           <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
             <button
               onClick={toggleTheme}

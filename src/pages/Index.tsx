@@ -16,31 +16,8 @@ import showcasePink from "@/assets/showcase-pink-glow.jpg";
 import showcaseFrench from "@/assets/showcase-french-vibes.jpg";
 import showcaseBloom from "@/assets/showcase-bloom-nails.jpg";
 import About from "@/components/About";
+import Services from "@/components/Services";
 
-const services = [
-  {
-    name: "Classic Manicure",
-    price: "$35",
-    duration: "45 min",
-    description: "Shape, cuticle care, and a flawless polish finish.",
-    features: ["Nail shaping", "Cuticle care", "Hand massage", "Long-lasting polish"],
-  },
-  {
-    name: "Gel Extensions",
-    price: "$75",
-    duration: "90 min",
-    description: "Sculpted gel extensions in your perfect length and shape.",
-    features: ["Custom length", "Gel build-up", "Glossy or matte top", "2-3 week wear"],
-    highlight: true,
-  },
-  {
-    name: "Custom Nail Art",
-    price: "From $20",
-    duration: "+30 min",
-    description: "Hand-painted designs, chrome, rhinestones — the canvas is yours.",
-    features: ["Hand-painted art", "Rhinestones & chrome", "Floral & abstract", "Bridal designs"],
-  },
-];
 
 const gallery = [
   { src: g1, alt: "French manicure with gold accents" },
@@ -163,95 +140,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ABOUT */}
-      {/* <section id="about" className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <span className="font-script text-3xl text-accent">about me</span>
-              <h2 className="text-4xl md:text-5xl font-serif tracking-tight">
-                A small studio, a <em className="text-gradient-magenta not-italic">big obsession</em> with detail.
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Shasha Nails was born from a quiet obsession: turning ten little
-                canvases into something you can't stop staring at. I work by
-                appointment only so every client gets my full attention — no rush,
-                no shortcuts, just thoughtful artistry in a space that feels like home.
-              </p>
-              <ul className="space-y-3">
-                {[
-                  "Licensed & sanitation-certified",
-                  "Premium gel & builder products",
-                  "Custom designs from concept to nail",
-                  "Cozy, private 1-on-1 studio",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <span className="flex items-center justify-center h-6 w-6 rounded-full gradient-magenta">
-                      <Check className="h-3.5 w-3.5 text-primary-foreground" />
-                    </span>
-                    <span className="text-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="relative">
-              <div className="grid grid-cols-2 gap-4">
-                <img src={g3} alt="" loading="lazy" width={768} height={768} className="rounded-3xl shadow-petal aspect-[3/4] object-cover translate-y-6" />
-                <img src={g2} alt="" loading="lazy" width={768} height={768} className="rounded-3xl shadow-petal aspect-[3/4] object-cover" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 <About/>
-      {/* SERVICES */}
-      <section id="services" className="py-20 md:py-28 bg-[hsl(var(--blush)/0.5)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <span className="font-script text-3xl text-accent">services</span>
-            <h2 className="text-4xl md:text-5xl font-serif tracking-tight">The menu</h2>
-            <p className="text-muted-foreground text-lg">
-              Transparent pricing, generous time, no hidden add-ons.
-            </p>
-          </div>
+<Services/>
 
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {services.map((s) => (
-              <Card
-                key={s.name}
-                className={`p-8 rounded-3xl border-2 transition-all hover:-translate-y-2 hover:shadow-elegant ${
-                  s.highlight
-                    ? "border-primary bg-card shadow-elegant relative overflow-hidden"
-                    : "border-border bg-card/80"
-                }`}
-              >
-                {s.highlight && (
-                  <span className="absolute top-4 right-4 text-xs px-3 py-1 rounded-full gradient-magenta text-primary-foreground font-medium">
-                    Most loved
-                  </span>
-                )}
-                <h3 className="text-2xl font-serif">{s.name}</h3>
-                <div className="mt-3 flex items-baseline gap-2">
-                  <span className="text-4xl font-serif text-gradient-magenta font-semibold">{s.price}</span>
-                  <span className="text-sm text-muted-foreground">· {s.duration}</span>
-                </div>
-                <p className="mt-4 text-muted-foreground">{s.description}</p>
-                <ul className="mt-6 space-y-2">
-                  {s.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm">
-                      <Heart className="h-3.5 w-3.5 text-accent fill-accent" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <Button asChild className="mt-8 w-full rounded-full gradient-magenta text-primary-foreground hover:opacity-90">
-                  <a href="#booking">Book this</a>
-                </Button>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* GALLERY */}
       <section id="gallery" className="py-20 md:py-28">
