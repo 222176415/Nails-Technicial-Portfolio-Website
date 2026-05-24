@@ -15,6 +15,7 @@ import g6 from "@/assets/gallery-6.jpg";
 import showcasePink from "@/assets/showcase-pink-glow.jpg";
 import showcaseFrench from "@/assets/showcase-french-vibes.jpg";
 import showcaseBloom from "@/assets/showcase-bloom-nails.jpg";
+import About from "@/components/About";
 
 const services = [
   {
@@ -163,7 +164,7 @@ const Index = () => {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="py-20 md:py-28">
+      {/* <section id="about" className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -201,8 +202,8 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
-
+      </section> */}
+<About/>
       {/* SERVICES */}
       <section id="services" className="py-20 md:py-28 bg-[hsl(var(--blush)/0.5)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

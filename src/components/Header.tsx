@@ -38,7 +38,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center min-w-0">
             <a href="/" className="flex items-center gap-2">
-              <img src={logo} alt="Shasha Nails" className="h-9 sm:h-11 w-auto" />
+              <img src={logo} alt="Shasha Nails" className="h-9 sm:h-11 w-auto dark:rounded-lg" />
               <span className="font-script text-xl sm:text-2xl text-primary truncate">Shasha Nails</span>
             </a>
           </div>
