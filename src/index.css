@@ -298,3 +298,11 @@ a, button, [role="button"], .social-icon {
     @apply bg-[hsl(var(--tag-growth))] text-primary;
   }
 }
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
