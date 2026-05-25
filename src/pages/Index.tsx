@@ -1,57 +1,22 @@
 import { useEffect } from "react";
-import { Sparkles, Heart, Star, MapPin, Clock, Instagram, Phone, Mail, Check } from "lucide-react";
+import { Sparkles,  Instagram, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import logo from "@/assets/shasha-logo.png";
 import hero from "@/assets/hero-nails.jpg";
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import g5 from "@/assets/gallery-5.jpg";
-import g6 from "@/assets/gallery-6.jpg";
 import showcasePink from "@/assets/showcase-pink-glow.jpg";
 import showcaseFrench from "@/assets/showcase-french-vibes.jpg";
 import showcaseBloom from "@/assets/showcase-bloom-nails.jpg";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Booking from "@/components/Booking";
-
-const gallery = [
-  { src: g1, alt: "French manicure with gold accents" },
-  { src: g2, alt: "Chrome rose gold almond nails" },
-  { src: g3, alt: "Floral hand-painted nail art" },
-  { src: g4, alt: "Glittery pink stiletto nails" },
-  { src: g5, alt: "Milky white pearl bridal nails" },
-  { src: g6, alt: "Burgundy glossy almond nails" },
-];
-
-const testimonials = [
-  {
-    name: "Amelia R.",
-    role: "Returning client",
-    quote: "Shasha is a true artist. My nails have never looked this good — every set feels custom-made for me.",
-    rating: 5,
-  },
-  {
-    name: "Jasmine K.",
-    role: "Bride 2024",
-    quote: "She did my bridal nails and I was speechless. So delicate, so elegant. Worth every penny.",
-    rating: 5,
-  },
-  {
-    name: "Noor A.",
-    role: "Monthly regular",
-    quote: "The studio is calm, clean, and Shasha is the warmest. I look forward to every appointment.",
-    rating: 5,
-  },
-];
+import  Gallery from "@/components/Gallery"
+import  Testimonials from "@/components/Testimonials";
 
 const Index = () => {
   useEffect(() => {
-    // Calendly inline widget script (placeholder — swap URL when ready)
     const id = "calendly-widget-script";
     if (!document.getElementById(id)) {
       const s = document.createElement("script");
@@ -65,8 +30,6 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background animate-fade-in">
       <Header />
-
-      {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 gradient-hero opacity-60" aria-hidden />
         <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-[hsl(var(--rose)/0.25)] blur-3xl" aria-hidden />
@@ -139,97 +102,11 @@ const Index = () => {
           </div>
         </div>
       </section>
-
 <About/>
 <Services/>
-
-
-      {/* GALLERY */}
-      <section id="gallery" className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <span className="font-script text-3xl text-accent">portfolio</span>
-            <h2 className="text-4xl md:text-5xl font-serif tracking-tight">Recent work</h2>
-            <p className="text-muted-foreground text-lg">
-              A peek inside the studio. Each set is one-of-one.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-            {gallery.map((img, i) => (
-              <div
-                key={i}
-                className={`group relative overflow-hidden rounded-3xl shadow-petal hover:shadow-elegant transition-all duration-500 ${
-                  i % 5 === 0 ? "md:row-span-2 md:aspect-[3/4]" : "aspect-square"
-                }`}
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  width={768}
-                  height={768}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                  <span className="text-primary-foreground text-sm font-medium">{img.alt}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
-      <section id="testimonials" className="py-20 md:py-28 bg-[hsl(var(--blush)/0.5)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <span className="font-script text-3xl text-accent">love letters</span>
-            <h2 className="text-4xl md:text-5xl font-serif tracking-tight">What clients say</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {testimonials.map((t) => (
-              <Card key={t.name} className="p-8 rounded-3xl border-border bg-card/80 hover:shadow-petal transition-all">
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-accent text-accent" />
-                  ))}
-                </div>
-                <p className="text-foreground leading-relaxed italic">"{t.quote}"</p>
-                <div className="mt-6 pt-6 border-t border-border">
-                  <div className="font-serif text-lg">{t.name}</div>
-                  <div className="text-sm text-muted-foreground">{t.role}</div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* BOOKING */}
-      {/* <section id="booking" className="py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
-            <span className="font-script text-3xl text-accent">book a session</span>
-            <h2 className="text-4xl md:text-5xl font-serif tracking-tight">
-              Pick a time that <em className="text-gradient-magenta not-italic">works for you</em>
-            </h2>
-          </div>
-
-          <div className="rounded-[2rem] overflow-hidden border-2 border-[hsl(var(--blush-deep))] bg-card shadow-elegant">
-         
-            <div
-              className="calendly-inline-widget"
-              data-url="https://calendly.com/nsukugold07/30min?background_color=fae1f4&primary_color=f391cb"
-              style={{ minWidth: "320px", height: "720px" }}
-            />
-          </div>
-
-  
-        </div>
-      </section> */}
-      <Booking/>
+<Gallery/>
+<Testimonials/>
+<Booking/>
       <section id="contact" className="py-20 md:py-28 bg-[hsl(var(--blush)/0.5)]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative mb-16 md:mb-24">
