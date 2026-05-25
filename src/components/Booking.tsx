@@ -2,24 +2,26 @@ import React, { useEffect } from 'react';
 
 export default function Booking() {
   useEffect(() => {
-    // 1. Dynamically append the Calendly widget script to the document body
+    // 1. Core Fix: Dynamically load the correct Calendly external library source API
     const script = document.createElement('script');
-    script.src = 'https://calendly.com/nsukugold07/30min?background_color=fae1f4&primary_color=f391cb';
+    script.src = 'https://calendly.com';
     script.async = true;
     document.body.appendChild(script);
 
     return () => {
-      // 2. Clean up script when unmounting the view to prevent memory leaks
-      document.body.removeChild(script);
+      // 2. Clean up script when unmounting the view to prevent DOM memory leaks
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
     };
   }, []);
 
   return (
-    <section id="booking" className="py-10 md:py-18 bg-[hsl(var(--background))] transition-colors duration-300">
+    <section id="booking" className="py-12 md:py-20 bg-[hsl(var(--background))] transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Block Section */}
-        <div className="text-center max-w-2xl mx-auto mb-12 space-y-4 reveal">
+        <div className="text-center max-w-2xl mx-auto mb-12 space-y-3 reveal">
           <span className="font-script text-3xl text-[hsl(var(--accent))] block mb-1">
             book a session
           </span>
@@ -31,11 +33,12 @@ export default function Booking() {
           </p>
         </div>
 
-
-        <div className="rounded-[2rem] overflow-hidden border border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-elegant transition-all duration-300 hover:border-[hsl(var(--magenta)/0.2)]">
+        {/* Embedded Iframe Container Wrapper - Matches your 21.dev styles */}
+        <div className="rounded-[2rem] overflow-hidden border border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-elegant transition-all duration-300 hover:border-[hsl(var(--magenta)/0.25)]">
           <div
             className="calendly-inline-widget w-full"
-             data-url="https://calendly.com/nsukugold07/30min?background_color=fae1f4&primary_color=f391cb"
+            // Dynamic branding query configuration overrides inside the data-url
+           data-url="https://calendly.com/nsukugold07/30min?background_color=fae1f4&primary_color=f391cb"
             style={{ minWidth: '320px', height: '700px' }}
           />
         </div>
