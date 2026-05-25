@@ -17,7 +17,7 @@ import showcaseFrench from "@/assets/showcase-french-vibes.jpg";
 import showcaseBloom from "@/assets/showcase-bloom-nails.jpg";
 import About from "@/components/About";
 import Services from "@/components/Services";
-
+import Booking from "@/components/Booking";
 
 const gallery = [
   { src: g1, alt: "French manicure with gold accents" },
@@ -208,20 +208,17 @@ const Index = () => {
       </section>
 
       {/* BOOKING */}
-      <section id="booking" className="py-20 md:py-28">
+      {/* <section id="booking" className="py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
             <span className="font-script text-3xl text-accent">book a session</span>
             <h2 className="text-4xl md:text-5xl font-serif tracking-tight">
               Pick a time that <em className="text-gradient-magenta not-italic">works for you</em>
             </h2>
-            <p className="text-muted-foreground text-lg">
-              Real-time availability via Calendly. You'll receive a confirmation email immediately.
-            </p>
           </div>
 
           <div className="rounded-[2rem] overflow-hidden border-2 border-[hsl(var(--blush-deep))] bg-card shadow-elegant">
-            {/* Calendly inline widget — replace data-url with your own link */}
+         
             <div
               className="calendly-inline-widget"
               data-url="https://calendly.com/nsukugold07/30min?background_color=fae1f4&primary_color=f391cb"
@@ -229,16 +226,12 @@ const Index = () => {
             />
           </div>
 
-          <p className="text-center text-sm text-muted-foreground mt-4">
-            Calendly link is a placeholder — replace <code className="font-mono">data-url</code> in <code className="font-mono">Index.tsx</code> with your real Calendly URL.
-          </p>
+  
         </div>
-      </section>
-
-      {/* CONTACT */}
+      </section> */}
+      <Booking/>
       <section id="contact" className="py-20 md:py-28 bg-[hsl(var(--blush)/0.5)]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Tilted overlapping showcase cards */}
           <div className="relative mb-16 md:mb-24">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-0">
               {[
