@@ -96,14 +96,11 @@ export default function Footer() {
         </div>
 
       </div>
-
-      {/* Footer Bottom */}
       <div className="border-t border-dark-border pt-6 flex flex-wrap items-center justify-between gap-3 text-[10px] text-text-faint tracking-[0.5px]">
         <span>
           © 2025 Shasha Nails · All rights reserved
         </span>
-        
-        {/* Developer Attribution Link */}
+      
         <span>
           Built by{' '}
           <a 
@@ -117,7 +114,7 @@ export default function Footer() {
         </span>
 
         <span>
-          Made with love in Johannesburg
+          Made with love in Randburg 
         </span>
       </div>
     </footer>
