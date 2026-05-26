@@ -1,6 +1,6 @@
 import { Heart } from 'lucide-react';
 import React from 'react';
-
+import owner from "@/assets/Gallery/owner.jpeg";
 export default function About() {
   const credentials = [
     { text: 'Professional Training', boldText: 'Certified Nail Technician' },
@@ -25,7 +25,7 @@ export default function About() {
           <div className="w-full h-[400px] md:h-[500px] rounded-[20px] overflow-hidden border border-dark-border bg-dark relative group">
             
             <img 
-              src="https://unsplash.com" 
+              src={owner}
               alt="Shasha Nails Artist" 
               className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
             />

@@ -1,10 +1,10 @@
 import React from 'react';
-import g1 from "@/assets/Gallery/gallery-1.jpg";
-import g2 from "@/assets/Gallery/gallery-2.jpg";
-import g3 from "@/assets/Gallery/gallery-3.jpg";
-import g4 from "@/assets/Gallery/gallery-4.jpg";
-import g5 from "@/assets/Gallery/gallery-5.jpg";
-import g6 from "@/assets/Gallery/gallery-6.jpg";
+import g1 from "@/assets/Gallery/gallery-1.jpeg";
+import g2 from "@/assets/Gallery/gallery-2.jpeg";
+import g3 from "@/assets/Gallery/gallery-3.jpeg";
+import g4 from "@/assets/Gallery/gallery-4.jpeg";
+import g5 from "@/assets/Gallery/gallery-5.jpeg";
+import g6 from "@/assets/Gallery/gallery-6.jpeg";
 export default function Gallery() {
   const galleryItems = [
     {
