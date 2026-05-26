@@ -24,11 +24,20 @@ export default function About() {
         <div className="about-visual relative reveal w-full">
           <div className="w-full h-[400px] md:h-[500px] rounded-[20px] overflow-hidden border border-dark-border bg-dark relative group">
             
-            <img 
-              src={owner}
+            {/* <img 
+              src=
               alt="Shasha Nails Artist" 
               className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
-            />
+            /> */}
+            <LazyImage
+  src="/images/shasha-portrait.jpg"
+  alt="Shasha — Professional Nail Technician, Johannesburg"
+  className="w-full aspect-[3/4] rounded-2xl"
+  objectFit="cover"
+  priority={false}
+  width={600}
+  height={800}
+/>
   
             <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-60 pointer-events-none" />
           </div>
