@@ -1,7 +1,7 @@
 # ════════════════════════════════════════════
 # robots.txt — Shasha Nails
 # https://www.shashanails.co.za
-# Last updated: 2025
+# Last updated: 2026
 # ════════════════════════════════════════════
 
 # ── Priority crawlers ───────────────────────
