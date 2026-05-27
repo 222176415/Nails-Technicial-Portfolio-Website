@@ -50,7 +50,7 @@ export default function About() {
           </h3>
 
           <p className="text-[13px] md:text-[15px] text-text-muted leading-[1.9] font-light mb-6 md:mb-8">
-            Based in Johannesburg, Shasha has been turning nails into art since 2022. With a deep passion for precision, creativity, and client care, every appointment is a tailored experience — not just a service. From intricate custom art to flawless classic gels, each set is designed to tell your story beautifully.
+            Based in Johannesburg, Sharmaine has been turning nails into art since 2022. With a deep passion for precision, creativity, and client care, every appointment is a tailored experience — not just a service. From intricate custom art to flawless classic gels, each set is designed to tell your story beautifully.
           </p>
 
           <div className="flex flex-col gap-3">
