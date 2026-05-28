@@ -16,7 +16,6 @@ export default function CustomCursor() {
         dotRef.current.style.top = `${y}px`;
       }
 
-      // Hero Spotlight Logic
       const hero = document.getElementById('hero');
       const spotlight = document.getElementById('spotlight');
       if (hero && spotlight) {
@@ -27,7 +26,6 @@ export default function CustomCursor() {
         spotlight.style.setProperty('--my', pct_y);
       }
 
-      // Bento Card Hover Glow Engine
       document.querySelectorAll('.bento-card').forEach((card) => {
         const r = card.getBoundingClientRect();
         card.style.setProperty('--mx', ((x - r.left) / r.width) * 100 + '%');
@@ -59,19 +57,34 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Central Solid Dot - Uses global text foreground token to invert across themes automatically */}
-      <div 
-        ref={dotRef} 
-        id="cursor-dot" 
-        className="fixed w-2 h-2 bg-[hsl(var(--foreground))] rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out shadow-[0_0_10px_rgba(var(--foreground),0.2)]"
-      />
-      
-      {/* Outer Tracking Ring - Tinted boundary ring matching theme variations */}
-      <div 
-        ref={ringRef} 
-        id="cursor-ring" 
-        className="fixed w-9 h-9 border border-[hsl(var(--foreground)/0.3)] rounded-full pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 transition-all duration-75 ease-out shadow-[0_0_15px_rgba(var(--foreground),0.05)]"
-      />
+      <div
+        ref={dotRef}
+        id="cursor-dot"
+        className="fixed pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out"
+      >
+       <svg
+  width="14"
+  height="14"
+  viewBox="0 0 24 24"
+  fill="#C2005F"
+  xmlns="http://www.w3.org/2000/svg"
+  className="fill-[#C2005F] dark:fill-white drop-shadow-[0_0_6px_rgba(194,0,95,0.7)] dark:drop-shadow-[0_0_6px_rgba(255,255,255,0.4)] animate-[pulse-dot_1.8s_ease-in-out_infinite]"
+  aria-hidden="true"
+>
+  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+           2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+           C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5
+           c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+</svg>
+      </div>
+
+     <div
+  ref={ringRef}
+  id="cursor-ring"
+  className="fixed w-9 h-9 rounded-full pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 transition-all duration-75 ease-out
+    border border-[#C2005F]/30 shadow-[0_0_15px_rgba(194,0,95,0.08)]
+    dark:border-white/20 dark:shadow-[0_0_15px_rgba(255,255,255,0.05)]"
+/>
     </>
   );
 }
