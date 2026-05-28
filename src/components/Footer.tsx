@@ -1,33 +1,35 @@
 import React from 'react';
-import { Instagram, Smartphone, Facebook } from 'lucide-react';
+import { Phone, Instagram, Mail } from "lucide-react";
 
 export default function Footer() {
-  const socials = [
-    { 
-      name: 'Instagram', 
-      icon: Instagram, 
-      link: 'https://instagram.com', 
-      hoverColor: 'hover:text-[#E1306C] hover:border-[#E1306C]' 
-    },
-    { 
-      name: 'WhatsApp', 
-      icon: Smartphone, 
-      link: 'https://wa.me', 
-      hoverColor: 'hover:text-[#25D366] hover:border-[#25D366]' 
-    },
-    { 
-      name: 'Facebook', 
-      icon: Facebook, 
-      link: 'https://facebook.com', 
-      hoverColor: 'hover:text-[#1877F2] hover:border-[#1877F2]' 
-    },
-  ];
+ const socials = [
+  {
+    name: "Instagram",
+    icon: Instagram,
+    link: "https://instagram.com/nailsbyshasha2025?igsh=MWM1aDk5dHhzdHhlYg==",
+    handle: "@nailsbyshasha2025",
+    hoverColor: "hover:text-[#E1306C] hover:border-[#E1306C]",
+  },
+  {
+    name: "WhatsApp",
+    icon: Phone,
+    link: "https://wa.me/27691255967",
+    handle: "+27 (0) 69 125 5967",
+    hoverColor: "hover:text-[#25D366] hover:border-[#25D366]",
+  },
+  {
+    name: "Email",
+    icon: Mail,
+    link: "mailto:nsukugold07@gmail.com",
+    handle: "nsukugold07@gmail.com",
+    hoverColor: "hover:text-[#C2005F] hover:border-[#C2005F]",
+  },
+];
 
   return (
     <footer className="relative z-10 bg-dark-card border-t border-dark-border px-6 py-12 md:px-12 md:py-13">
       <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-8 md:gap-12 mb-12">
         
-        {/* Brand Column */}
         <div className="flex flex-col">
           <span className="font-script text-[26px] italic text-blush block mb-1">
             Shasha Nails
@@ -75,8 +77,6 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-
-        {/* Services Column */}
         <div>
           <h4 className="text-[9px] tracking-[3px] uppercase text-magenta font-semibold mb-4">
             Services
