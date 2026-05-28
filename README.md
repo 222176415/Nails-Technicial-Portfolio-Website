@@ -68,7 +68,7 @@ Instead of a custom booking engine, this system uses **Calendly**:
 ## 🔄 Version History
 
 ### v1.0.0
-- Static prototype via Lovable.dev
+- Static prototype via 
 - Basic contact & portfolio system
 
 ### v2.0.0 (Current Development)
