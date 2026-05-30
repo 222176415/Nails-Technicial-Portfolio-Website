@@ -23,6 +23,7 @@ jobs:
 
       # Step 3: Install clean clean dependencies
       - name: Install dependencies
+      #Clean Install
         run: npm ci
 
       # Step 4: Build production asset layers
