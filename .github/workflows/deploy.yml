@@ -1,37 +1,37 @@
 name: Deploy Professional Nail Technician
 
 on:
-push:
-banches:
-- main
+  push:
+    branches:
+      - main
 
 jobs:
-build-and-deploy: 
-# runner: This is the image the job will run on.
-runs-on: ubuntu-latest
+  build-and-deploy: 
+    # This is the operating system image the runner engine will execute on
+    runs-on: ubuntu-latest
 
-steps:
-#Check out the Repository
-- name: Check out the Repository
-uses: actions/checkout@v3
-# Install Node.js
+    steps:
+      # Step 1: Check out the Repository source code
+      - name: Check out the Repository
+        uses: actions/checkout@v4
 
-- name: Install Node.js
-uses: actions/setup-node@v3
-with: 
-node-version:18
+      # Step 2: Install and configure Node.js environment loop
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with: 
+          node-version: 20
 
-#Install dependencies
-- name: Install dependencies
-run : npm install 
+      # Step 3: Install clean clean dependencies
+      - name: Install dependencies
+        run: npm ci
 
-#Build the project
--name : Build the project
-run : npm run build
+      # Step 4: Build production asset layers
+      - name: Build the project
+        run: npm run build
 
-#Deploy to GitHub Pages (using github action)
-- name: Deploy to GitHub Pages
-uses: peaceiris/actions-gh-pages@v3
-with:
- github_token: ${{ secrets.GITHUB_TOKEN }}
-publish_dir: ./dist
+      # Step 5: Deploy production bundle into your GitHub Pages branch
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
