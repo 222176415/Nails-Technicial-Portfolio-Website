@@ -63,7 +63,7 @@ const Header = () => {
             </button>
             
             <Button asChild className="hidden md:flex gradient-magenta hover:opacity-90 text-primary-foreground rounded-full px-6 py-2 hover:scale-105 transition-all shadow-petal">
-              <a href="#booking">Book Now</a>
+           <a href="/quote">Get a Quote</a>
             </Button>
 
             {/* Mobile Menu Button */}
