@@ -5,8 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
   // Core Fix: Linked directly to your exact GitHub repository path string
-  base: mode === "production" ? "/Nails-Technicial-Portfolio-Website/" : "/",
-  
+  //base: mode === "production" ? "/Nails-Technicial-Portfolio-Website/" : "/",
+  base: '/',
   server: {
     host: "::",
     port: 8080,
