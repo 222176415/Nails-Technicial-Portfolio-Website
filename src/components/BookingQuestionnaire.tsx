@@ -18,15 +18,19 @@ import {
   CheckCircle2, AlertCircle, Loader2,
   Home, Scissors, Image as ImageIcon, User, ChevronDown,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+
+// inside the component, top
 
 // ─── SYSTEM CONFIG ────────────────────────────────────────────────────────────
 const SYSTEM_CONFIG = {
   OWNER_WHATSAPP_NUMBER:
     (import.meta as any).env?.VITE_OWNER_PHONE ?? "27691255967",
-  SALON_COORDINATES: {
-    LAT: parseFloat((import.meta as any).env?.VITE_SALON_LAT ?? "-26.0936"),
-    LNG: parseFloat((import.meta as any).env?.VITE_SALON_LNG ?? "28.0064"),
-  },
+SALON_COORDINATES: {
+  LAT: parseFloat(import.meta.env.VITE_SALON_LAT ?? "-26.0938479"),
+  LNG: parseFloat(import.meta.env.VITE_SALON_LNG ?? "28.0046481"),
+},
   PRICING_METRICS: {
     PER_KM_RATE: parseFloat(
       (import.meta as any).env?.VITE_PER_KM_RATE ?? "12.00"
@@ -202,7 +206,7 @@ ${travelLine ? "\n" + travelLine : ""}
     form.serviceType !== null &&
     form.packageId !== "" &&
     (form.serviceType === "salon" || form.address.length > 5);
-
+const navigate = useNavigate();
   // ═══════════════════════════════════════════════════════════════════════════
   // RENDER
   // ═══════════════════════════════════════════════════════════════════════════
@@ -223,6 +227,13 @@ ${travelLine ? "\n" + travelLine : ""}
 
         {/* HEADER */}
         <header className="mb-8 text-center">
+              <button
+      onClick={() => navigate("/")}
+      className="mb-6 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[2px] text-white/35 transition-colors hover:text-white"
+    >
+      <ArrowLeft size={13} />
+      Back
+    </button>
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[rgba(194,0,95,0.3)] bg-[rgba(194,0,95,0.08)] px-4 py-1.5">
             <span className="h-1.5 w-1.5 animate-[pulse-dot_1.8s_ease-in-out_infinite] rounded-full bg-[#C2005F]" />
             <span className="text-[9px] font-semibold uppercase tracking-[2.5px] text-[#F5C6D8]">
@@ -239,16 +250,16 @@ ${travelLine ? "\n" + travelLine : ""}
             Tell us what you have in mind and we'll give you an instant estimate.
           </p>
 
-          {/* Calendly escape hatch */}
-          <a
-            href={SYSTEM_CONFIG.CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-flex items-center gap-1.5 text-[11px] text-white/35 underline underline-offset-2 transition-colors hover:text-[#F5C6D8]"
-          >
-            Just want a standard booking? Skip to Calendly
-            <ExternalLink size={10} />
-          </a>
+      
+          <div className="mb-6 text-center">
+
+      <a href="/#booking"
+      className="inline-flex items-center gap-1.5 text-[11px] text-white/35 underline underline-offset-2 transition-colors hover:text-[#F5C6D8]"
+    >
+      Just want a standard booking? Skip to Calendly
+      <ExternalLink size={10} />
+    </a>
+  </div>
         </header>
 
         <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">

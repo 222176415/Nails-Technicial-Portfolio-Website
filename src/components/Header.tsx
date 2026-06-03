@@ -79,15 +79,15 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-2 p-4 rounded-2xl pill-nav animate-fade-in">
+          <div className="md:hidden p-4 rounded-md  animate-fade-in bg-accent-foreground">
             <nav className="flex flex-col gap-3">
               <a onClick={() => setIsMenuOpen(false)} href="#about" className="text-sm font-medium px-3 py-2 rounded-xl hover:bg-muted/60">About</a>
               <a onClick={() => setIsMenuOpen(false)} href="#services" className="text-sm font-medium px-3 py-2 rounded-xl hover:bg-muted/60">Services</a>
               <a onClick={() => setIsMenuOpen(false)} href="#gallery" className="text-sm font-medium px-3 py-2 rounded-xl hover:bg-muted/60">Gallery</a>
               <a onClick={() => setIsMenuOpen(false)} href="#testimonials" className="text-sm font-medium px-3 py-2 rounded-xl hover:bg-muted/60">Reviews</a>
               <a onClick={() => setIsMenuOpen(false)} href="#contact" className="text-sm font-medium px-3 py-2 rounded-xl hover:bg-muted/60">Contact</a>
-              <Button asChild className="gradient-magenta text-primary-foreground rounded-full w-full">
-                <a href="#booking" onClick={() => setIsMenuOpen(false)}>Book Now</a>
+              <Button asChild className="gradient-magenta text-primary-foreground rounded-sm w-full">
+                <a href="/quote" onClick={() => setIsMenuOpen(false)}>Get a Quote</a>
               </Button>
             </nav>
           </div>
