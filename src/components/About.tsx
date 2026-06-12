@@ -27,7 +27,7 @@ export default function About() {
             <img 
               src={owner}
               alt="Shasha Nails Artist" 
-              className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
+              className="w-full h-full object-cover object-center grayscale-0 hover:grayscale-0 transition-all duration-700 ease-in-out"
             />
   
             <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-60 pointer-events-none" />

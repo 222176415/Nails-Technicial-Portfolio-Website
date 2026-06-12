@@ -33,7 +33,7 @@ const HEADER_CSS = `
     transition: background 0.4s ease, border-color 0.4s ease;
   }
   .sn-header.scrolled {
-    background: rgba(10, 3, 7, 0.85);
+    background: --foreground;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(201, 132, 122, 0.18);
@@ -357,7 +357,7 @@ const Header = () => {
             </a>
 
             {/* Desktop primary CTA — hidden on mobile via CSS */}
-            <a href="#quote" className="sn-cta-primary">
+            <a href="/quote" className="sn-cta-primary">
               Get a Quote
             </a>
 
@@ -400,7 +400,7 @@ const Header = () => {
               <a href="#booking" className="sn-mobile-book" onClick={close}>
                 Book a Session
               </a>
-              <a href="#quote" className="sn-mobile-quote" onClick={close}>
+              <a href="/quote" className="sn-mobile-quote" onClick={close}>
                 Get a Quote
               </a>
             </div>
