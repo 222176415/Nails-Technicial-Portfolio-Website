@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import logo from "@/assets/shasha-logo.png";
-/* ─────────────────────────────────────────────────────────────────
-   NAV LINKS — edit here to add / remove items
-───────────────────────────────────────────────────────────────── */
+
 const NAV_LINKS = [
   { label: "About",    href: "#about"        },
   { label: "Services", href: "#services"     },
@@ -12,10 +10,7 @@ const NAV_LINKS = [
   { label: "Contact",  href: "#contact"      },
 ];
 
-/* ─────────────────────────────────────────────────────────────────
-   CSS — injected once into <head>.
-   All responsive rules live here so inline styles stay simple.
-───────────────────────────────────────────────────────────────── */
+
 const HEADER_CSS = `
   @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=DM+Sans:wght@300;400;500&display=swap');
 
